@@ -1,8 +1,5 @@
-.header-position
-    h1.logo Travis Neilson
-
-    nav.site-nav 
-            ul
+mixin nav-content()
+        ul
                 li: a(href="#about") About 
                 li: a(href="#youtube") Youtube
                 li: a(href="#mentoring") Mentoring
@@ -11,7 +8,16 @@
                 li: a(href="#design") Design
                 li: a(href="#notes") Notes
                 li: a(href="#contact") Contact
-        a(href="mailto:kingofwardn@gmail.com").email-link +email Mentoring
 
-    .mobile-nav-toggle: span
-    
+.mobile-nav
+    +nav-content() 
+header
+        .header-position
+                h1.logo Travis Neilson
+
+                nav.site-nav 
+                  +nav-content()
+                
+                a(href="mailto:kingofwardn@gmail.com").email-link +email me
+
+                .mobile-nav-toggle: span

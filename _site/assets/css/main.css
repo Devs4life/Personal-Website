@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Fira+Sans:400,400italic);
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -482,7 +483,7 @@ body {
   background: #F6F6F8;
   font-size: 14px;
   line-height: 1.6;
-  font-family: 'Open Sans' sans-serif;
+  font-family: 'Fira Sans', sans-serif;
   color: #2E2D33;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%; }
@@ -534,7 +535,8 @@ body {
     height: 40px;
     margin-right: 20px;
     -ms-flex-align: center;
-        align-items: center; }
+        align-items: center;
+    cursor: pointer; }
     .home-wrap header .mobile-nav-toggle span,
     .home-wrap header .mobile-nav-toggle span:before,
     .home-wrap header .mobile-nav-toggle span:after {
@@ -548,19 +550,36 @@ body {
     .home-wrap header .mobile-nav-toggle span:before {
       top: 13px; }
     .home-wrap header .mobile-nav-toggle span:after {
-      bottom: 15px; }
-    .home-wrap header .mobile-nav-toggle:hover span {
+      bottom: 13px; }
+    .home-wrap header .mobile-nav-toggle.is-open span {
       background: transparent; }
-    .home-wrap header .mobile-nav-toggle:hover span:before,
-    .home-wrap header .mobile-nav-toggle:hover span:after {
+    .home-wrap header .mobile-nav-toggle.is-open span:before,
+    .home-wrap header .mobile-nav-toggle.is-open span:after {
       -webkit-transform-origin: center;
               transform-origin: center;
       -webkit-transform: rotate(45deg);
               transform: rotate(45deg);
       top: 0; }
-    .home-wrap header .mobile-nav-toggle:hover span:after {
+    .home-wrap header .mobile-nav-toggle.is-open span:after {
       -webkit-transform: rotate(-45deg);
               transform: rotate(-45deg); }
+
+.home-wrap .mobile-nav {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: white;
+  padding: 30px 0 20px;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  transition: all 0.3s ease-in-out; }
+  .home-wrap .mobile-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .home-wrap .mobile-nav li {
+    text-align: center;
+    margin-bottom: 10px; }
 
 @media (max-width: 775px) {
   .home-wrap header {
@@ -583,7 +602,31 @@ body {
       height: 45px; }
     .home-wrap header .mobile-nav-toggle {
       display: -ms-flexbox;
-      display: flex; } }
+      display: flex; }
+  .home-wrap .mobile-nav.is-open {
+    display: block;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%); } }
+
+section.about {
+  background-image: url(../img/about-bg.jpg);
+  background-position: center bottom;
+  background-size: cover; }
+  section.about h2 {
+    color: #3f3f42;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    margin-left: -108px;
+    margin-top: 0; }
+  section.about .home-lead {
+    padding-bottom: 180px; }
+
+@media (max-width: 640px) {
+  section.about h2, section.about .home-lead {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px; } }
 
 .home-wrap {
   display: -ms-flexbox;
@@ -592,3 +635,53 @@ body {
   @media (max-width: 775px) {
     .home-wrap {
       display: block; } }
+
+.home-sections {
+  -ms-flex: 1;
+      flex: 1; }
+  .home-sections section {
+    padding: 50px 0; }
+  .home-sections .flex {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: rows;
+        flex-direction: rows; }
+  .home-sections .flex--center {
+    -ms-flex-pack: center;
+        justify-content: center; }
+  .home-sections .flex--space-around {
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  .home-sections .order-first {
+    -ms-flex-order: -1;
+        order: -1; }
+
+.col-1 {
+  max-width: 300px;
+  margin: 0 10px; }
+
+.col-2 {
+  max-width: 620px;
+  margin: 0 10px;
+  background: honeydew; }
+
+.col-50 {
+  width: 50%;
+  background: yellow; }
+
+.push-right {
+  margin-left: 330px; }
+
+@media (max-width: 640px) {
+  .home-sections .flex {
+    display: block; }
+  .col-1 {
+    max-width: 100%; }
+  .col-50 {
+    width: auto; }
+  .push-right {
+    margin-left: 10px; } }
+
+.home-lead {
+  font-size: 36px;
+  line-height: 1.1; }
