@@ -15,6 +15,7 @@ gulp.task('browser-sync', ['sass'], function() {
     });
 
     gulp.watch('assets/css/**', ['sass']);
+    gulp.watch('assets/js/**').on('change', reload);;
     gulp.watch(['*.html', '_layouts/*.html', '_includes/*']).on('change', reload);
     gulp.watch('_jadefiles/*', ['jade']);
 });
